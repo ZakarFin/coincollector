@@ -33,20 +33,21 @@ define(function() {
 			// Player controls
 	        if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
 	        {
-	            sprite.x -= speed * scales.x;
+        		//sprite.body.velocity.y = -200;
+	            sprite.body.x -= speed * scales.x;
 	        }
 	        else if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
 	        {
-	            sprite.x += speed * scales.x;
+	            sprite.body.x += speed * scales.x;
 	        }
 
 	        if (game.input.keyboard.isDown(Phaser.Keyboard.UP))
 	        {
-	            sprite.y -= speed * scales.y;
+	            sprite.body.y -= speed * scales.y;
 	        }
 	        else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN))
 	        {
-				sprite.y += speed * scales.y;
+				sprite.body.y += speed * scales.y;
 	        }
 		},
 		getGameObject : function() {
@@ -54,8 +55,8 @@ define(function() {
 		},
 		bulletHit : function() {
 	    	// TODO: blink player, reduce life, check game over etc etc
-	        sprite.velocity.x = 0;
-	        sprite.velocity.y = 0;
+	        sprite.body.velocity.x = 0;
+	        sprite.body.velocity.y = 0;
 	        lives--;
 	        if(lives < 1) {
 

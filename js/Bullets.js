@@ -46,7 +46,7 @@ define(['util'], function(util) {
 					var spriteX = -20; //randomFromInterval(0,level[0].length) * 10 * scaleX;
 					var spriteY = util.randomFromInterval(0,levelSize.y) * 10 * scales.y;
 	                bullet.reset(spriteX, spriteY);
-	                bullet.velocity.x = 50 * scales.x;
+	                bullet.body.velocity.x = 50 * scales.x;
 					//game.add.tween(bullet).to({ x: game.width }, 3000, Phaser.Easing.Linear.None, true);
 	                timer = game.time.now + interval;
 	            }
